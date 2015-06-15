@@ -4,6 +4,7 @@
 <head>
  
     <meta charset="utf-8">
+    <meta id="token" value="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -24,7 +25,10 @@
 </head>
  
 <body>
-    <div id="app"></div>
+    
+    <div id="wrapper">
+        <div id="app"></div>
+    </div>
     <!-- /#app -->
  
  

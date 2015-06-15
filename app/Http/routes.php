@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('home');
 });
+
+post('login', function() {
+    return response()->json(['success' => true, 'token' => '123'], 200);
+});

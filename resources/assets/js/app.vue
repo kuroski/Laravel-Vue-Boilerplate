@@ -1,11 +1,12 @@
 <style lang="less">
-#header {
-  color: red;
-}
 </style>
 
 <template>
-  <div id="wrapper">
+  <div v-if="!isLoggedIn">
+    Você não está logado
+  </div>
+
+  <div v-if="isLoggedIn">
     <sidebar></sidebar>
 
     <div id="page-wrapper">
@@ -18,11 +19,30 @@
 <script>
 module.exports = {
   el: '#app',
-  data: {
-    view: ''
-  },
+
   components: {
     'sidebar': require('./views/sidebar.vue'),
+  },
+
+  computed: {
+    token: function() {
+      return localStorage.getItem('token');
+    }
+  },
+
+  data: {
+    view: '',
+    isLoggedIn: false
+  },
+
+  ready: function() {
+    this.$http.post('/login', function (data, status, request) {
+
+      // console.log(data, status, request)
+
+    }).error(function (data, status, request) {
+        // handle error
+    })
   }
 }
 </script>
