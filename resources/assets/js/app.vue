@@ -5,12 +5,14 @@
 </style>
 
 <template>
-  <!-- header -->
-  <div id="header">
-    Olá mundo
+  <div id="wrapper">
+    <sidebar></sidebar>
+
+    <div id="page-wrapper">
+    Olá
+    <!-- <div v-component="{{view}}" v-with="params:params" v-transition></div> -->
+    </div>
   </div>
-  <!-- main view -->
-  <!-- <div v-component="{{view}}" v-with="params:params" v-transition></div> -->
 </template>
 
 <script>
@@ -18,6 +20,9 @@ module.exports = {
   el: '#app',
   data: {
     view: ''
+  },
+  components: {
+    'sidebar': require('./views/sidebar.vue'),
   }
 }
 </script>

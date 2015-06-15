@@ -15,7 +15,7 @@ var vueify = require('laravel-elixir-browserify').init("vueify");
 elixir(function(mix) {
 
     mix.vueify('main.js', {insertGlobals: true, transform: "vueify", output: "public/assets/vue",});
- 
+    
     mix.copy('bower_components/startbootstrap-sb-admin-2/less', 'resources/assets/less/sb');
     mix.copy('bower_components/bootstrap-material-design/less', 'resources/assets/less/material');
     mix.copy('bower_components/bootstrap-material-design/dist/fonts', 'public/assets/fonts');
@@ -29,7 +29,8 @@ elixir(function(mix) {
         'bower_components/font-awesome/css/font-awesome.min.css',
         'bower_components/snackbarjs/dist/snackbar.min.css',
         'bower_components/metisMenu/dist/metisMenu.min.css',
-        'bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css'
+        'bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css',
+        'bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css'
     ], 'public/assets/css', './');
  
     mix.scripts([

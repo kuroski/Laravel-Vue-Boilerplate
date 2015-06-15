@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
  
-    <title>Portal | Jamur</title>
+    <title>Vue</title>
  
  
     <link href="{{ asset('assets/css/all.css') }}" rel="stylesheet">
@@ -24,10 +24,7 @@
 </head>
  
 <body>
- 
-    <div id="app">
- 
-    </div>
+    <div id="app"></div>
     <!-- /#app -->
  
  
