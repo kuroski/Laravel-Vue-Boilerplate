@@ -1,0 +1,22 @@
+{
+  "name": "Laravel-Vue-Boilerplate",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "moment": "~2.10.3",
+    "bootstrap-material-design": "~0.3.0",
+    "snackbarjs": "~1.0.0",
+    "startbootstrap-sb-admin-2": "~1.0.7",
+    "metisMenu": "~2.0.2",
+    "fontawesome": "~4.3.0",
+    "vue": "~0.12.1"
+  }
+}
