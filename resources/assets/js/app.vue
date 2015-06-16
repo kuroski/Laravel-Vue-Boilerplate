@@ -41,9 +41,23 @@ module.exports = {
   },
 
   events: {
+    'login:logout': function () {
+      this.isLoggedIn = false;
+
+      this.$http.post('/logout', function (data, status, request) {
+
+        storage.saveArray('credentials', []);
+        $.snackbar({content: "Você saiu do painel!", style: 'toast', toggle: 'snackbar'});
+
+      }).error(function (data, status, request) {
+
+        $.snackbar({content: data.message, style: 'toast', toggle: 'snackbar'});
+
+      });
+    },
+
     'login:success': function () {
       this.isLoggedIn = true;
-      // console.log(storage.fetchArray('credentials'));
     },
 
     'login:send': function(credentials) {

@@ -24,3 +24,9 @@ post('login', function(Illuminate\Http\Request $request)
 
     return response()->json(['success' => false, 'message' => 'Não foi possível efetuar o seu login'], 401);
 });
+
+post('logout', ['middleware' => 'auth', function() 
+{
+    Auth::logout();
+    return response()->json(['success' => true, 'message' => 'Você saiu com sucesso'], 200);
+}]);

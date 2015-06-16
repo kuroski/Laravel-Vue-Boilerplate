@@ -40,7 +40,7 @@
           </a>
           <ul class="dropdown-menu dropdown-user">
               <li>
-                <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <a href="#/dashboard" v-on="click: this.$dispatch('login:logout')"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
               </li>
           </ul>
           <!-- /.dropdown-user -->
@@ -53,7 +53,7 @@
       <div class="sidebar-nav navbar-collapse">
           <ul class="nav" id="side-menu">
               <li>
-                  <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                  <a href="#/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
               </li>
           </ul>
       </div>
