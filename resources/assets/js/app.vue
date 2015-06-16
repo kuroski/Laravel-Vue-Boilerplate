@@ -8,7 +8,7 @@
     <sidebar></sidebar>
 
     <div id="page-wrapper">
-    Olá
+     a 
     <!-- <div v-component="{{view}}" v-with="params:params" v-transition></div> -->
     </div>
   </div>
@@ -34,13 +34,16 @@ module.exports = {
   },
 
   ready: function() {
-      console.log(storage.fetchArray('credentials'));
+    var credentials = storage.fetchArray('credentials');
+    console.log(credentials);
+    if (_.isObject(credentials) && !_.isEmpty(credentials))
+      this.$emit('login:send', credentials);
   },
 
   events: {
     'login:success': function () {
       this.isLoggedIn = true;
-      console.log(storage.fetchArray('credentials'));
+      // console.log(storage.fetchArray('credentials'));
     },
 
     'login:send': function(credentials) {

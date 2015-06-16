@@ -17,6 +17,7 @@
     "startbootstrap-sb-admin-2": "~1.0.7",
     "metisMenu": "~2.0.2",
     "fontawesome": "~4.3.0",
-    "vue": "~0.12.1"
+    "vue": "~0.12.1",
+    "underscore": "~1.8.3"
   }
 }
