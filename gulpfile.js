@@ -30,7 +30,8 @@ elixir(function(mix) {
         'bower_components/snackbarjs/dist/snackbar.min.css',
         'bower_components/metisMenu/dist/metisMenu.min.css',
         'bower_components/startbootstrap-sb-admin-2/dist/css/timeline.css',
-        'bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css'
+        'bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css',
+        'public/css/app.css'
     ], 'public/assets/css', './');
  
     mix.scripts([

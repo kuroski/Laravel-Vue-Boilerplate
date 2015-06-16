@@ -2,9 +2,7 @@
 </style>
 
 <template>
-  <div v-if="!isLoggedIn">
-    Você não está logado
-  </div>
+  <login v-if="!isLoggedIn"></login>
 
   <div v-if="isLoggedIn">
     <sidebar></sidebar>
@@ -14,6 +12,9 @@
     <!-- <div v-component="{{view}}" v-with="params:params" v-transition></div> -->
     </div>
   </div>
+
+  
+  <pre>{{$data | json 4}}</pre>
 </template>
 
 <script>
@@ -22,12 +23,7 @@ module.exports = {
 
   components: {
     'sidebar': require('./views/sidebar.vue'),
-  },
-
-  computed: {
-    token: function() {
-      return localStorage.getItem('token');
-    }
+    'login': require('./views/login.vue'),
   },
 
   data: {
@@ -35,14 +31,10 @@ module.exports = {
     isLoggedIn: false
   },
 
-  ready: function() {
-    this.$http.post('/login', function (data, status, request) {
-
-      // console.log(data, status, request)
-
-    }).error(function (data, status, request) {
-        // handle error
-    })
-  }
+  events: {
+    'login:success': function () {
+      this.isLoggedIn = true;
+    }
+  },
 }
 </script>

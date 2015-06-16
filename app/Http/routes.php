@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () 
+{
     return view('home');
 });
 
-post('login', function() {
-    return response()->json(['success' => true, 'token' => '123'], 200);
+post('login', function(Illuminate\Http\Request $request) 
+{
+    if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
+        return response()->json(['success' => true, 'message' => 'Login efetuado com sucesso'], 200);
+    }
+
+    return response()->json(['success' => false, 'message' => 'Não foi possível efetuar o seu login'], 401);
 });
