@@ -10,6 +10,7 @@
           <h3 class="panel-title">Faça o seu login</h3>
         </div>
         <div class="panel-body">
+
           <form role="form" method="POST" v-on="submit: doLogin">
             <fieldset>
               <div class="form-group">
@@ -22,6 +23,7 @@
               <input type="submit" class="btn btn-lg btn-success btn-block" value="Login">
             </fieldset>
           </form>
+          
         </div>
       </div>
     </div>
@@ -44,16 +46,7 @@ module.exports = {
     doLogin: function(e) {
       e.preventDefault();
 
-      this.$http.post('/login', this.credentials, function (data, status, request) {
-
-        this.$dispatch('login:success');
-        $.snackbar({content: "Logado com sucesso!", style: 'toast', toggle: 'snackbar'});
-
-      }).error(function (data, status, request) {
-
-        $.snackbar({content: data.message, style: 'toast', toggle: 'snackbar'});
-
-      });
+      this.$dispatch('login:send', this.credentials);
     }
   }
 }
