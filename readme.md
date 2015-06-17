@@ -12,9 +12,9 @@ This is the first time I am using Vue, and is also the first time I create a rep
 $ git clone https://github.com/kuroski/Laravel-Vue-Boilerplate.git
 $ cd Laravel-Vue-Boilerplate
 $ cp .env.example .env
+$ composer update
 $ php artisan key:generate
 $ touch storage/database.sqlite
-$ composer update
 $ [sudo] npm install
 $ bower install (if not work use "sudo bower install --allow-root")
 $ php artisan migrate
@@ -24,6 +24,9 @@ $ php artisan serve
 ```
 
 **Or use Homestead xD**
+
+Login: john@doe.com
+Password: secret
 
 ### Introduction
 
