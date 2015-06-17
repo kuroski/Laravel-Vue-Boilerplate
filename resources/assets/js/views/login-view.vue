@@ -66,7 +66,7 @@ module.exports = {
 
         this.$dispatch('login:success');
         storage.saveArray('credentials', this.credentials);
-        $.snackbar({content: "Logado com sucesso!", style: 'toast', toggle: 'snackbar'});
+        $.snackbar({content: data.message, style: 'toast', toggle: 'snackbar'});
 
         window.location = "#/dashboard"; 
 

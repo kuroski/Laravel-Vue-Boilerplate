@@ -34,7 +34,6 @@
  
     <script src="{{ asset('assets/js/all.js') }}"></script>
     <script src="{{ asset('assets/vue/main.js') }}"></script>
-    @yield('js')
  
 </body>
  

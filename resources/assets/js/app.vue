@@ -52,7 +52,7 @@ module.exports = {
 
         this.isLoggedIn = false;
         storage.saveArray('credentials', []);
-        $.snackbar({content: "Você saiu do painel!", style: 'toast', toggle: 'snackbar'});
+        $.snackbar({content: data.message, style: 'toast', toggle: 'snackbar'});
 
         window.location = "#/login";
 
