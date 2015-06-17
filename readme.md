@@ -111,16 +111,27 @@ router.init('login')
 ### References
 
 [FezVrasta/bootstrap-material-design] - Material design theme for Bootstrap 3
+
 [IronSummitMedia/startbootstrap-sb-admin-2] - A free, open source, Bootstrap admin theme created by Start Bootstrap
+
 [vuejs/vue-resource] - Resource component for Vue.js
+
 [vuejs/vueify] - Browserify transform for single-file Vue components
+
 [vuejs/vue-hackernews] - HackerNews clone with Vue.js
+
 [flatiron/director] - A tiny and isomorphic URL router for JavaScript
+
 [skrajewski/laravel-elixir-browserify] - Laravel Elixir Browserify Extension
+
 [The Vast World of Vue.js] - **Laracasts Serie =DD**
+
 [Vue.js] - Vue.js official website / documentation / api
+
 [Laravel] - Laravel official website / documentation / api
+
 [FezVrasta/snackbarjs] - Create Material Design snackbars and toasts with ease.
+
 [jashkenas/underscore] - JavaScript's utility _ belt
 
 License
