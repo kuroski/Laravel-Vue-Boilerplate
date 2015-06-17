@@ -29,9 +29,12 @@
     </div>
   </div>
 </div>
+  <pre>{{$data | json 4}}</pre>
 </template>
 
 <script>
+var storage = require('../storage')
+
 module.exports = {
   data: function() {
     return {
@@ -42,11 +45,36 @@ module.exports = {
     }
   },
 
+  ready: function() {
+    var credentials = storage.fetchArray('credentials');
+
+    if (_.isObject(credentials) && !_.isEmpty(credentials))
+    {
+      this.credentials.email    = credentials.email;
+      this.credentials.password = credentials.password;
+      this.doLogin();
+    }
+  },
+
   methods: {
     doLogin: function(e) {
-      e.preventDefault();
 
-      this.$dispatch('login:send', this.credentials);
+      if(_.isObject(e) && !_.isEmpty(this.credentials))
+        e.preventDefault();
+
+      this.$http.post('/login', this.credentials, function (data, status, request) {
+
+        this.$dispatch('login:success');
+        storage.saveArray('credentials', this.credentials);
+        $.snackbar({content: "Logado com sucesso!", style: 'toast', toggle: 'snackbar'});
+
+        window.location = "#/dashboard"; 
+
+      }).error(function (data, status, request) {
+
+        $.snackbar({content: data.message, style: 'toast', toggle: 'snackbar'});
+
+      });
     }
   }
 }

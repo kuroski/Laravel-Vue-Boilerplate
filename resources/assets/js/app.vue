@@ -1,17 +1,24 @@
 <style lang="less">
+.fade-transition {
+  display: block;
+  position: relative;
+   opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fade-enter, .fade-leave {
+  opacity: 0;
+}
 </style>
 
 <template>
-  <login v-if="!isLoggedIn"></login>
-
-  <div v-if="isLoggedIn">
-    <sidebar></sidebar>
-
-    <div id="page-wrapper">
-     a 
-    <!-- <div v-component="{{view}}" v-with="params:params" v-transition></div> -->
-    </div>
-  </div>
+  <component 
+    is="{{view}}"
+    v-transition="fade"
+    transition-mode="out-in"
+  ></component>
 
 
   <pre>{{$data | json 4}}</pre>
@@ -24,8 +31,8 @@ module.exports = {
   el: '#app',
 
   components: {
-    'sidebar': require('./views/sidebar.vue'),
-    'login': require('./views/login.vue')
+    'login-view': require('./views/login-view.vue'),
+    'dashboard-view': require('./views/dashboard-view.vue')
   },
 
   data: {
@@ -34,21 +41,21 @@ module.exports = {
   },
 
   ready: function() {
-    var credentials = storage.fetchArray('credentials');
-    console.log(credentials);
-    if (_.isObject(credentials) && !_.isEmpty(credentials))
-      this.$emit('login:send', credentials);
+    if (this.view != 'login-view' && !this.isLoggedIn)
+      window.location = "#/login";
   },
 
   events: {
     'login:logout': function () {
-      this.isLoggedIn = false;
 
       this.$http.post('/logout', function (data, status, request) {
 
+        this.isLoggedIn = false;
         storage.saveArray('credentials', []);
         $.snackbar({content: "Você saiu do painel!", style: 'toast', toggle: 'snackbar'});
 
+        window.location = "#/login";
+
       }).error(function (data, status, request) {
 
         $.snackbar({content: data.message, style: 'toast', toggle: 'snackbar'});
@@ -56,22 +63,8 @@ module.exports = {
       });
     },
 
-    'login:success': function () {
+    'login:success': function() {
       this.isLoggedIn = true;
-    },
-
-    'login:send': function(credentials) {
-      this.$http.post('/login', credentials, function (data, status, request) {
-
-        storage.saveArray('credentials', credentials);
-        this.$emit('login:success');
-        $.snackbar({content: "Logado com sucesso!", style: 'toast', toggle: 'snackbar'});
-
-      }).error(function (data, status, request) {
-
-        $.snackbar({content: data.message, style: 'toast', toggle: 'snackbar'});
-
-      });
     }
   }
 }
