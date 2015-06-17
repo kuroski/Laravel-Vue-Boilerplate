@@ -21,6 +21,13 @@ router.on('dashboard', function (page) {
 router.configure({
   notfound: function () {
     router.setRoute('dashboard')
+  },
+
+  after: function() {
+    var route = window.location.hash.slice(2)
+        
+    if (route != 'login' && !app.isLoggedIn)
+      window.location = "#/login"
   }
 })
  
