@@ -14,6 +14,7 @@ $ cd Laravel-Vue-Boilerplate
 $ cp .env.example .env
 $ php artisan key:generate
 $ touch storage/database.sqlite
+$ composer update
 $ [sudo] npm install
 $ bower install (if not work use "sudo bower install --allow-root")
 $ php artisan migrate
