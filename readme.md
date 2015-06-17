@@ -107,7 +107,7 @@ router.init('login')
 - [ ] Learn how to use TDD with Vue
 - [ ] Improve the backend (The way it is now is faster to do, so then I have to improve everything)
 - [ ] Optimize all
-- [ ] Create a second panel option to use token authentication (jwt-auth)
+- [ ] **Build a branch or a new repo of this dashboard using API + token authentication (jwt-auth)**
 
 ### References
 
