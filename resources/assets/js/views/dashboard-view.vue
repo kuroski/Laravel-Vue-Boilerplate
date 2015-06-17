@@ -2,7 +2,7 @@
 </style>
 
 <template>
-  <sidebar-view></sidebar-view>
+  <sidebar></sidebar>
 
   <div id="page-wrapper">
     <div class="container-fluid">
@@ -27,7 +27,7 @@ module.exports = {
   },
 
   components: {
-    'sidebar-view': require('./sidebar-view.vue')
+    'sidebar': require('../components/sidebar.vue')
   },
 }
 </script>
