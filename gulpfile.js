@@ -21,6 +21,7 @@ elixir(function(mix) {
     mix.copy('bower_components/bootstrap-material-design/dist/fonts', 'public/assets/fonts');
     mix.copy('bower_components/font-awesome/fonts', 'public/assets/fonts');
     mix.copy('bower_components/bootstrap/dist/fonts', 'public/assets/fonts');
+    mix.copy('bower_components/svg-loaders/svg-loaders', 'public/assets/svg-loaders');
  
     mix.less('custom.less');
  

@@ -2,10 +2,10 @@
 .fade-transition {
   display: block;
   position: relative;
-   opacity: 1;
-   transition: opacity .25s ease-in-out;
-   -moz-transition: opacity .25s ease-in-out;
-   -webkit-transition: opacity .25s ease-in-out;
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
 }
 
 .fade-enter, .fade-leave {
@@ -14,6 +14,8 @@
 </style>
 
 <template>
+  <loader></loader> 
+
   <component 
     is="{{view}}"
     v-transition="fade"
@@ -32,7 +34,8 @@ module.exports = {
 
   components: {
     'login-view': require('./views/login-view.vue'),
-    'dashboard-view': require('./views/dashboard-view.vue')
+    'dashboard-view': require('./views/dashboard-view.vue'),
+    'loader': require('./components/loader.vue')
   },
 
   data: {
@@ -47,7 +50,6 @@ module.exports = {
 
   events: {
     'login:logout': function () {
-
       this.$http.post('/logout', function (data, status, request) {
 
         this.isLoggedIn = false;

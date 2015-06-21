@@ -18,6 +18,7 @@
     "metisMenu": "~2.0.2",
     "fontawesome": "~4.3.0",
     "vue": "~0.12.1",
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "svg-loaders": "~1.0.2"
   }
 }

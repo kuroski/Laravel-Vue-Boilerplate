@@ -40,7 +40,7 @@
           </a>
           <ul class="dropdown-menu dropdown-user">
               <li>
-                <a href="#/dashboard" v-on="click: this.$dispatch('login:logout')"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <a href="#" v-on="click: this.$dispatch('login:logout')"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
               </li>
           </ul>
           <!-- /.dropdown-user -->

@@ -103,10 +103,11 @@ router.init('login')
 - [x] Create the basic login system
 - [x] Logging out
 - [x] Fade transition between components
+- [x] Create a page load indicator
 - [ ] Finish Readme
-- [ ] Create a page load indicator
 - [ ] Create a session on the dashboard for managing users
 - [ ] Check the application security
+- [ ] Make load indicator animation
 - [ ] Learn how to use TDD with Vue
 - [ ] Improve the backend (The way it is now is faster to do, so then I have to improve everything)
 - [ ] Optimize all
