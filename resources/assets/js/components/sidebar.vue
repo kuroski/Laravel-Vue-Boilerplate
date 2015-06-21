@@ -55,6 +55,9 @@
               <li>
                   <a href="#/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
               </li>
+              <li>
+                  <a href="#/users"><i class="fa fa-user fa-fw"></i> Users</a>
+              </li>
           </ul>
       </div>
       <!-- /.sidebar-collapse -->

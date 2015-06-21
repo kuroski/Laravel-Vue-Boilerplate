@@ -16,6 +16,8 @@
 <template>
   <loader></loader> 
 
+  <sidebar v-show="isLoggedIn"></sidebar>
+
   <component 
     is="{{view}}"
     v-transition="fade"
@@ -33,8 +35,10 @@ module.exports = {
   el: '#app',
 
   components: {
+    'sidebar': require('./components/sidebar.vue'),
     'login-view': require('./views/login-view.vue'),
     'dashboard-view': require('./views/dashboard-view.vue'),
+    'user-view': require('./views/user-view.vue'),
     'loader': require('./components/loader.vue')
   },
 
