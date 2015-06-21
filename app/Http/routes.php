@@ -25,8 +25,17 @@ post('login', function(Illuminate\Http\Request $request)
     return response()->json(['success' => false, 'message' => 'Unable to login'], 401);
 });
 
-post('logout', ['middleware' => 'auth', function() 
-{
-    Auth::logout();
-    return response()->json(['success' => true, 'message' => 'You logout with success'], 200);
-}]);
+Route::group(['middleware' => 'auth'], function() { 
+
+    post('logout', function() 
+    {
+        Auth::logout();
+        return response()->json(['success' => true, 'message' => 'You logout with success'], 200);
+    });
+
+    get('users', function() {
+        $users = App\User::all();
+
+        return response()->json(['success' => 'true', 'message' => 'Loading users', 'data' => ['users' => $users->toJson()]], 200);
+    });
+});
