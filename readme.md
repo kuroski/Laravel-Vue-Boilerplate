@@ -4,8 +4,6 @@ I created this repository in an attempt to create a basic boilerplate for a simp
 
 This is the first time I am using Vue, and is also the first time I create a repository on Github, suggestions are most welcome, and I hope to count on your collaboration.
 
-**I can't write very well in English, so I'm using the google translator to help me**
-
 ### Installation
 
 ```sh
